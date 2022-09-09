@@ -1,8 +1,6 @@
 # tabulus-app-proxy
 
-# App API proxy
-
-NGINX proxy app for APIS
+NGINX proxy app for Tabulus app api
 
 ## Usage
 
