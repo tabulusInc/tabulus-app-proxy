@@ -13,7 +13,7 @@ jobs:
       - name: Build the Docker image
         run: |
           mkdir data/
-          docker build . --file Dockerfile --compress --tag proxy .
+          docker build --file Dockerfile --compress --tag proxy .
           docker save --output data/image.tar proxy
 
       # see: https://github.com/aws-actions/configure-aws-credentials
