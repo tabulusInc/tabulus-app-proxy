@@ -37,7 +37,7 @@ jobs:
           IMAGE_TAG: ${{ github.sha }}
         run: |
           docker load --input data/image.tar
-          docker tag proxy:latest $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+          docker tag proxy/proxy:latest $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker tag $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG $ECR_REGISTRY/$ECR_REPOSITORY:latest
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
