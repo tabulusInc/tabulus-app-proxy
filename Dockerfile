@@ -1,4 +1,4 @@
-FROM nginxinc/nginx-unprivileged:1-alpine
+FROM nginxinc/nginx-unprivileged:1.23-alpine
 
 LABEL maintainer="tife@tabulus.app"
 
@@ -13,10 +13,10 @@ USER root
 RUN touch /etc/nginx/conf.d/default.conf
 RUN chown nginx:nginx /etc/nginx/conf.d/default.conf
 
-COPY ./entrypoint.sh /entrypoint.sh
 
+COPY ./entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 USER nginx
 
-CMD [ "/entrypoint.sh" ]
+CMD ["/entrypoint.sh"]
