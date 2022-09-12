@@ -9,6 +9,11 @@ server {
         # pass requests to the tabulus host
         proxy_pass http://tabulus;
   }
+
+  location /health {
+        return 200 'OK';
+        add_header Content-Type text/plain;
+  }
 }
 
 
